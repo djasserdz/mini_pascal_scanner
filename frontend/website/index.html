@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✨ Code Editor</h1>
+        
+        <div class="editor-wrapper">
+            <textarea id="codeEditor" placeholder="Write your code here...">// Write your JavaScript code here
+function greet(name) {
+    return `Hello, ${name}!`;
+}
+
+console.log(greet('World'));</textarea>
+        </div>
+
+        <div class="button-group">
+            <button id="submitBtn">Submit Code</button>
+            <button id="clearBtn" class="clear-btn">Clear</button>
+        </div>
+
+        <div class="output" id="output">
+            <h3>Output:</h3>
+            <pre id="outputContent"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
