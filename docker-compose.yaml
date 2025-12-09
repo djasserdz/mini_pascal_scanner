@@ -1,0 +1,42 @@
+services:
+  compiler_backend:
+    build : ./backend
+    command: 
+      - "uvicorn"
+      - "src.main:app"
+      - "--host"
+      - "0.0.0.0"
+      - "--port"
+      - "8000"
+    ports:
+      - "8000:8000"
+    networks:
+      - mynat
+    restart: unless-stopped
+
+
+  compiler_frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    networks:
+      - mynat2
+
+  compiler_reverse_proxy:
+    build: ./reverse_proxy
+    ports:
+      - "90:80"
+    networks:
+      - mynat
+      - mynat2
+    environment:
+      BACKEND: compiler_backend
+      BACKEND_PORT: 8000
+      FRONTEND: compiler_frontend
+      FRONTEND_PORT: 80
+
+networks:
+  mynat:
+    external: true
+  mynat2:
+    driver: bridge
