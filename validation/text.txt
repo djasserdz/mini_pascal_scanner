@@ -1,0 +1,13 @@
+programme p1;
+variable
+    x1, y2 : entier;
+    z3 : reel;
+debut
+    x1 := 10;
+    y2 := 20;
+    z3 := x1 + y2;
+    si z3 > 25 alors
+        x1 := x1 + 1
+    sinon
+        y2 := y2 - 1
+fin.

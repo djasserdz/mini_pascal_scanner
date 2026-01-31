@@ -1,0 +1,87 @@
+============================================================
+  Résultat de l'Analyse Syntaxique
+============================================================
+
+------------------------------------------------------------
+  Séquence de Règles Appliquées
+------------------------------------------------------------
+     1 : ProgrammePascal -> programme NomProgramme ; Corps .
+     2 : NomProgramme -> ID
+     3 : Corps -> [PartieDéfinitionConstante] [PartieDéfinitionVariable] InstrComp
+     4 : PartieDéfinitionVariable -> variable DéfinitionVariable {DéfinitionVariable}
+     5 : DéfinitionVariable -> NomVariable {, NomVariable} : Type ;
+     6 : NomVariable -> ID
+     7 : NomVariable -> ID
+     8 : Type -> entier
+     9 : DéfinitionVariable -> NomVariable {, NomVariable} : Type ;
+    10 : NomVariable -> ID
+    11 : Type -> reel
+    12 : InstrComp -> debut Instruction { ; Instruction } fin
+    13 : Instruction -> InstructionAffectation
+    14 : InstructionAffectation -> NomVariable := Expression
+    15 : NomVariable -> ID
+    16 : Expression -> ExpressionSimple [OperateurRelationnel ExpressionSimple]
+    17 : ExpressionSimple -> [OperateurSigne] Terme {OperateurAddition Terme}
+    18 : Terme -> Facteur {OperateurMult Facteur}
+    19 : Facteur -> Constante
+    20 : Constante -> 10
+    21 : Instruction -> InstructionAffectation
+    22 : InstructionAffectation -> NomVariable := Expression
+    23 : NomVariable -> ID
+    24 : Expression -> ExpressionSimple [OperateurRelationnel ExpressionSimple]
+    25 : ExpressionSimple -> [OperateurSigne] Terme {OperateurAddition Terme}
+    26 : Terme -> Facteur {OperateurMult Facteur}
+    27 : Facteur -> Constante
+    28 : Constante -> 20
+    29 : Instruction -> InstructionAffectation
+    30 : InstructionAffectation -> NomVariable := Expression
+    31 : NomVariable -> ID
+    32 : Expression -> ExpressionSimple [OperateurRelationnel ExpressionSimple]
+    33 : ExpressionSimple -> [OperateurSigne] Terme {OperateurAddition Terme}
+    34 : Terme -> Facteur {OperateurMult Facteur}
+    35 : Facteur -> Constante | NomVariable
+    36 : Constante -> x1
+    37 : OperateurAddition -> +
+    38 : Terme -> Facteur {OperateurMult Facteur}
+    39 : Facteur -> Constante | NomVariable
+    40 : Constante -> y2
+    41 : Instruction -> InstructionSi
+    42 : InstructionSi -> si Expression alors Instruction [sinon Instruction]
+    43 : Expression -> ExpressionSimple [OperateurRelationnel ExpressionSimple]
+    44 : ExpressionSimple -> [OperateurSigne] Terme {OperateurAddition Terme}
+    45 : Terme -> Facteur {OperateurMult Facteur}
+    46 : Facteur -> Constante | NomVariable
+    47 : Constante -> z3
+    48 : OperateurRelationnel -> >
+    49 : ExpressionSimple -> [OperateurSigne] Terme {OperateurAddition Terme}
+    50 : Terme -> Facteur {OperateurMult Facteur}
+    51 : Facteur -> Constante
+    52 : Constante -> 25
+    53 : Instruction -> InstructionAffectation
+    54 : InstructionAffectation -> NomVariable := Expression
+    55 : NomVariable -> ID
+    56 : Expression -> ExpressionSimple [OperateurRelationnel ExpressionSimple]
+    57 : ExpressionSimple -> [OperateurSigne] Terme {OperateurAddition Terme}
+    58 : Terme -> Facteur {OperateurMult Facteur}
+    59 : Facteur -> Constante | NomVariable
+    60 : Constante -> x1
+    61 : OperateurAddition -> +
+    62 : Terme -> Facteur {OperateurMult Facteur}
+    63 : Facteur -> Constante
+    64 : Constante -> 1
+    65 : Instruction -> InstructionAffectation
+    66 : InstructionAffectation -> NomVariable := Expression
+    67 : NomVariable -> ID
+    68 : Expression -> ExpressionSimple [OperateurRelationnel ExpressionSimple]
+    69 : ExpressionSimple -> [OperateurSigne] Terme {OperateurAddition Terme}
+    70 : Terme -> Facteur {OperateurMult Facteur}
+    71 : Facteur -> Constante | NomVariable
+    72 : Constante -> y2
+    73 : OperateurAddition -> -
+    74 : Terme -> Facteur {OperateurMult Facteur}
+    75 : Facteur -> Constante
+    76 : Constante -> 1
+
+  ✅ Analyse syntaxique réussie - aucune erreur.
+
+============================================================
